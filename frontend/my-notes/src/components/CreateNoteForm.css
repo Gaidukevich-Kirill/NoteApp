@@ -1,0 +1,46 @@
+form {
+    display: flex;
+    flex-direction: column; /* Вертикальное выравнивание элементов */
+    max-width: 400px; /* Максимальная ширина формы */
+    margin: 20px auto; /* Центрирование формы */
+    padding: 20px; /* Внутренние отступы */
+    border: 1px solid #ccc; /* Обводка формы */
+    border-radius: 8px; /* Закругленные углы */
+    background-color: #f9f9f9; /* Фоновый цвет формы */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Тень */
+}
+
+h3 {
+    margin-bottom: 16px; /* Отступ снизу заголовка */
+    font-size: 1.5em; /* Размер шрифта заголовка */
+}
+
+input,
+textarea {
+    margin-bottom: 12px; /* Отступ снизу для полей */
+    padding: 10px; /* Внутренние отступы */
+    border: 1px solid #ccc; /* Обводка полей */
+    border-radius: 4px; /* Закругленные углы */
+    font-size: 1em; /* Размер шрифта */
+    width: 100%; /* Полная ширина полей */
+    box-sizing: border-box; /* Учет отступов и границ в ширине */
+}
+
+textarea {
+    resize: vertical; /* Позволяет изменять размер только по вертикали */
+    min-height: 100px; /* Минимальная высота текстового поля */
+}
+
+button {
+    padding: 10px; /* Внутренние отступы для кнопки */
+    border: none; /* Убираем стандартную обводку */
+    border-radius: 4px; /* Закругленные углы */
+    background-color: #007bff; /* Цвет фона кнопки */
+    color: white; /* Цвет текста */
+    font-size: 1em; /* Размер шрифта */
+    cursor: pointer; /* Курсор при наведении */
+}
+
+button:hover {
+    background-color: #0056b3; /* Цвет кнопки при наведении */
+}

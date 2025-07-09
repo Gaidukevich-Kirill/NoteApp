@@ -1,0 +1,37 @@
+.container {
+    display: flex; /* Используем Flexbox для выравнивания элементов */
+    flex-direction: column; /* Вертикальное расположение */
+    max-width: 400px; /* Максимальная ширина контейнера */
+    margin: 20px auto; /* Центрирование контейнера */
+    padding: 20px; /* Внутренние отступы */
+    border: 1px solid #ccc; /* Обводка контейнера */
+    border-radius: 8px; /* Закругленные углы */
+    background-color: #f9f9f9; /* Фоновый цвет контейнера */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Тень */
+}
+
+input {
+    margin-bottom: 12px; /* Отступ снизу для поля ввода */
+    padding: 10px; /* Внутренние отступы */
+    border: 1px solid #ccc; /* Обводка поля */
+    border-radius: 4px; /* Закругленные углы */
+    font-size: 1em; /* Размер шрифта */
+    width: 100%; /* Полная ширина поля */
+    box-sizing: border-box; /* Учет отступов и границ в ширине */
+}
+
+select {
+    margin-bottom: 12px; /* Отступ снизу для выпадающего списка */
+    padding: 10px; /* Внутренние отступы */
+    border: 1px solid #ccc; /* Обводка выпадающего списка */
+    border-radius: 4px; /* Закругленные углы */
+    font-size: 1em; /* Размер шрифта */
+    width: 100%; /* Полная ширина выпадающего списка */
+    box-sizing: border-box; /* Учет отступов и границ в ширине */
+    background-color: white; /* Цвет фона */
+    cursor: pointer; /* Курсор при наведении */
+}
+
+option {
+    font-size: 1em; /* Размер шрифта для опций */
+}

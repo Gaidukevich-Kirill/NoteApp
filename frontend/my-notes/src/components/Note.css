@@ -1,0 +1,34 @@
+
+.note {
+    width: 800px;
+    border: 1px solid #ccc; /* Обводка заметки */
+    border-radius: 8px; /* Закругленные углы */
+    padding: 16px; /* Внутренний отступ */
+    margin: 10px; /* Внешний отступ */
+    background-color: #f9f9f9; /* Фоновый цвет */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Тень */
+}
+
+.noteHeader {
+    font-size: 1.5em; /* Размер шрифта заголовка */
+    font-weight: bold; /* Жирный шрифт */
+    margin-bottom: 8px; /* Отступ снизу */
+}
+
+.divider {
+    height: 1px; /* Высота делителя */
+    background-color: #ddd; /* Цвет делителя */
+    margin: 10px 0; /* Отступ сверху и снизу */
+}
+
+.noteBody {
+    font-size: 1em; /* Размер шрифта для тела заметки */
+    color: #333; /* Цвет текста */
+    margin-bottom: 10px; /* Отступ снизу */
+}
+
+.noteFooter {
+    font-size: 0.9em; /* Размер шрифта для нижней части заметки */
+    color: #777; /* Цвет текста для нижней части */
+    text-align: right; /* Выравнивание текста по правому краю */
+}
