@@ -22,10 +22,10 @@
 }
 
 .page-button:hover {
-    background-color: #0056b3;
+    background-color: #ff5151;
 }
 
 .page-button.active {
-    background-color: #0056b3;
+    background-color: #4ad7d3;
     font-weight: bold;
 }

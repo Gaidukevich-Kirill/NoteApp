@@ -1,0 +1,20 @@
+# This is a generated file. Not intended for manual editing.
+services:
+  mynotes:
+    build:
+      context: "D:\\Projects\\NoteApp\\backend\\MyNotes"
+      dockerfile: "MyNotes/Dockerfile"
+      target: "base"
+    command: []
+    entrypoint:
+    - "dotnet"
+    - "/app/bin/Debug/net8.0/MyNotes.dll"
+    environment:
+      DOTNET_USE_POLLING_FILE_WATCHER: "true"
+    image: "mynotes:dev"
+    ports: []
+    volumes:
+    - "D:\\Projects\\NoteApp\\backend\\MyNotes\\MyNotes:/app:rw"
+    - "D:\\Projects\\NoteApp\\backend\\MyNotes:/src:rw"
+    - "C:\\Users\\Kiryl\\.nuget\\packages:/home/app/.nuget/packages"
+    working_dir: "/app"

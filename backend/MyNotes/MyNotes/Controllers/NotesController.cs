@@ -23,7 +23,7 @@ namespace MyNotes.Controllers
         public async Task<IActionResult> Create([FromBody] CreateNoteRequest request, CancellationToken cancellationToken)
         {
             var note = new Note(request.Title, request.Description);
-            
+
             await _context.Notes.AddAsync(note, cancellationToken);
             await _context.SaveChangesAsync(cancellationToken);
 
@@ -33,9 +33,13 @@ namespace MyNotes.Controllers
         [HttpGet("PaginateNotes")]
         public async Task<IActionResult> GetPaginateNotes([FromQuery] GetPaginateNotesRequest request, CancellationToken ct)
         {
-            var notesQuery = _context.Notes
-                .Where(n => string.IsNullOrWhiteSpace(request.Search) ||
-                            n.Title.ToLower().Contains(request.Search.ToLower()));
+            IQueryable<Note> notesQuery = _context.Notes;
+
+            if (!string.IsNullOrWhiteSpace(request.Search))
+            {
+                notesQuery = notesQuery
+                    .Where(n => n.Title.ToLower().Contains(request.Search.ToLower()));
+            }
 
             Expression<Func<Note, object>> selectorKey = request.SortItem?.ToLower() switch
             {
@@ -49,14 +53,24 @@ namespace MyNotes.Controllers
                 : notesQuery.OrderBy(selectorKey);
 
             var noteDtos = await notesQuery
-                .Select(n => new NoteDto(n.Id, n.Title, n.Description, n.CreatedAt))
                 .Skip((request.PageNumber-1) * request.PageSize)
                 .Take(request.PageSize)
-                .ToListAsync(cancellationToken: ct);
+                .Select(n => new NoteDto(n.Id, n.Title, n.Description, n.CreatedAt))
+                .ToArrayAsync(cancellationToken: ct);
 
-            return Ok(new GetNotesResponse(noteDtos));
+            var result = new Result<PaginationList<NoteDto>>()
+            {
+                IsSuccess = true,
+                Output = new PaginationList<NoteDto>
+                {
+                    Records = noteDtos,
+                    ElementCount = _context.Notes.Count()
+                }
+            };
+
+            return Ok(result);
         }
-    
+
         [HttpGet]
         public async Task<IActionResult> Get([FromQuery] GetNotesRequest request, CancellationToken ct)
         {

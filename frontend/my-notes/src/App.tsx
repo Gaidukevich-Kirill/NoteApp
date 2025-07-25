@@ -3,21 +3,38 @@ import './App.css';
 import CreateNoteForm from "./components/CreateNoteForm";
 import Note from "./components/Note";
 import Filters from "./components/Filters";
-import { useEffect } from "react";
-import { useState } from "react";
-import { createNote, fetchNotes } from "~services/notes";
-import Pagination from "~components/Pagination";
+import Pagination from "./components/Pagination";
+import { useEffect, useState } from "react";
+import { createNote, fetchNotes, fetchPaginateNotes } from "~services/notes";
 
 
 function App() {
+
+  const notesPerPage = 4;
+  const [currentPage, setCurrentPage] = useState(1);
+  const [currentNotes, setCurrentNotes] = useState([]);
+  const [elementCount, setElementCount] = useState(0);
+  const fetchData = async () => {
+    let result = await fetchPaginateNotes(filter, currentPage);
+    console.log(result);
+    setElementCount(result.output.elementCount);
+    setCurrentNotes(result?.output.records);
+  }
+
   //get, post notes + filters
   const [notes, setNotes] = useState([]);
   const [filter, setFilter] = useState({
     search: "",
     sortItem: "date",
     sortOrder: "desc",
+    pageSize: notesPerPage
   });
 
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
+  };
+
+  /*
   useEffect(() => {
     const fetchData = async () => {
       let notes = await fetchNotes(filter);
@@ -26,20 +43,26 @@ function App() {
 
     fetchData();
   }, [filter])
+  */
+
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     let notes = await fetchNotes(filter);
+  //     setNotes(notes?.data.notes);
+  //   }
+
+  //   fetchData();
+  // }, [filter])
+
+  useEffect(() => {
+    fetchData();
+  }, [filter,currentPage])
 
   const onCreate = async (note: any) => {
     await createNote(note);
     let notes = await fetchNotes(filter);
     setNotes(notes?.data.notes);
   }
-
-  //pagination
-  const [currentPage, setCurrentPage] = useState(1);
-  const notesPerPage = 3;
-
-  const lastNoteIndex = currentPage * notesPerPage;
-  const firstNoteIndex = lastNoteIndex - notesPerPage;
-  const currentNotes = notes.slice(firstNoteIndex, lastNoteIndex);
 
   return (
     <section>
@@ -60,7 +83,12 @@ function App() {
           </li>)
           )}
         </ul>
-        <Pagination totalNotes={notes.length} notesPerPage={notesPerPage} currentPage={currentPage} />
+
+        <Pagination
+          totalNotes={elementCount}
+          notesPerPage={notesPerPage}
+          currentPage={currentPage}
+          onPageChange={handlePageChange} />
       </div>
     </section>
   );
