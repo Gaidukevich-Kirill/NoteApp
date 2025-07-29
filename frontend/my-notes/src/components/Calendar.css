@@ -1,0 +1,36 @@
+.react-calendar {
+    width: 442px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.react-calendar__navigation__arrow {
+    color: black;
+}
+
+.react-calendar__navigation__label {
+    color: black;
+}
+
+.react-calendar__month-view__days__day {
+    color: black;
+}
+
+.react-calendar__month-view__days__day--weekend {
+    color: red;
+}
+
+
+.react-calendar__year-view__months__month {
+    color: black;
+}
+
+.react-calendar__decade-view__years__year {
+    color: black;
+}
+
+.react-calendar__century-view__decades__decade {
+    color: black;
+}

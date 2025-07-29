@@ -6,6 +6,7 @@ import Filters from "./components/Filters";
 import Pagination from "./components/Pagination";
 import { useEffect, useState } from "react";
 import { createNote, fetchNotes, fetchPaginateNotes } from "~services/notes";
+import CalendarForm from "./components/Calendar";
 
 
 function App() {
@@ -34,26 +35,6 @@ function App() {
     setCurrentPage(page);
   };
 
-  /*
-  useEffect(() => {
-    const fetchData = async () => {
-      let notes = await fetchNotes(filter);
-      setNotes(notes?.data.notes);
-    }
-
-    fetchData();
-  }, [filter])
-  */
-
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     let notes = await fetchNotes(filter);
-  //     setNotes(notes?.data.notes);
-  //   }
-
-  //   fetchData();
-  // }, [filter])
-
   useEffect(() => {
     fetchData();
   }, [filter,currentPage])
@@ -68,6 +49,7 @@ function App() {
     <section>
       <div>
         <CreateNoteForm onCreate={onCreate} />
+        <CalendarForm />
         <Filters filter={filter} setFilter={setFilter} />
       </div>
 
