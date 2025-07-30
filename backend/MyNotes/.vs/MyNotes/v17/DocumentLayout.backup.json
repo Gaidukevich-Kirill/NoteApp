@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "D:\\Projects\\NoteApp\\backend\\MyNotes\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{4255BE2F-218D-44FE-A942-AF93250E9A77}|MyNotes\\MyNotes.csproj|d:\\projects\\noteapp\\backend\\mynotes\\mynotes\\controllers\\notescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4255BE2F-218D-44FE-A942-AF93250E9A77}|MyNotes\\MyNotes.csproj|solutionrelative:mynotes\\controllers\\notescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{81DDED9D-158B-E303-5F62-77A2896D2A5A}|docker-compose.dcproj|d:\\projects\\noteapp\\backend\\mynotes\\docker-compose.yml||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{81DDED9D-158B-E303-5F62-77A2896D2A5A}|docker-compose.dcproj|solutionrelative:docker-compose.yml||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
@@ -17,10 +21,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{4255BE2F-218D-44FE-A942-AF93250E9A77}|MyNotes\\MyNotes.csproj|d:\\projects\\noteapp\\backend\\mynotes\\mynotes\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{4255BE2F-218D-44FE-A942-AF93250E9A77}|MyNotes\\MyNotes.csproj|solutionrelative:mynotes\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4255BE2F-218D-44FE-A942-AF93250E9A77}|MyNotes\\MyNotes.csproj|d:\\projects\\noteapp\\backend\\mynotes\\mynotes\\controllers\\notescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4255BE2F-218D-44FE-A942-AF93250E9A77}|MyNotes\\MyNotes.csproj|solutionrelative:mynotes\\controllers\\notescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4255BE2F-218D-44FE-A942-AF93250E9A77}|MyNotes\\MyNotes.csproj|d:\\projects\\noteapp\\backend\\mynotes\\mynotes\\models\\paginationlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -78,7 +78,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 11,
           "Children": [
             {
               "$type": "Bookmark",
@@ -90,13 +90,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "docker-compose.yml",
               "DocumentMoniker": "D:\\Projects\\NoteApp\\backend\\MyNotes\\docker-compose.yml",
               "RelativeDocumentMoniker": "docker-compose.yml",
               "ToolTip": "D:\\Projects\\NoteApp\\backend\\MyNotes\\docker-compose.yml",
               "RelativeToolTip": "docker-compose.yml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAKAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
               "WhenOpened": "2025-07-13T13:57:46.927Z",
               "EditorCaption": ""
@@ -163,7 +163,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "appsettings.Development.json",
               "DocumentMoniker": "D:\\Projects\\NoteApp\\backend\\MyNotes\\MyNotes\\appsettings.Development.json",
               "RelativeDocumentMoniker": "MyNotes\\appsettings.Development.json",
@@ -171,12 +171,11 @@
               "RelativeToolTip": "MyNotes\\appsettings.Development.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-06-03T21:28:11.143Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-03T21:28:11.143Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "appsettings.json",
               "DocumentMoniker": "D:\\Projects\\NoteApp\\backend\\MyNotes\\MyNotes\\appsettings.json",
               "RelativeDocumentMoniker": "MyNotes\\appsettings.json",
@@ -184,12 +183,11 @@
               "RelativeToolTip": "MyNotes\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-07-13T10:40:07.717Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-13T10:40:07.717Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Dockerfile",
               "DocumentMoniker": "D:\\Projects\\NoteApp\\backend\\MyNotes\\MyNotes\\Dockerfile",
               "RelativeDocumentMoniker": "MyNotes\\Dockerfile",
@@ -197,20 +195,20 @@
               "RelativeToolTip": "MyNotes\\Dockerfile",
               "ViewState": "AgIAAAMAAAAAAAAAAAAuwBsAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-07-13T10:30:50.679Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-13T10:30:50.679Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "NotesController.cs",
               "DocumentMoniker": "D:\\Projects\\NoteApp\\backend\\MyNotes\\MyNotes\\Controllers\\NotesController.cs",
               "RelativeDocumentMoniker": "MyNotes\\Controllers\\NotesController.cs",
-              "ToolTip": "D:\\Projects\\NoteApp\\backend\\MyNotes\\MyNotes\\Controllers\\NotesController.cs",
-              "RelativeToolTip": "MyNotes\\Controllers\\NotesController.cs",
-              "ViewState": "AgIAABcAAAAAAAAAAAAQwCUAAAAMAAAAAAAAAA==",
+              "ToolTip": "D:\\Projects\\NoteApp\\backend\\MyNotes\\MyNotes\\Controllers\\NotesController.cs*",
+              "RelativeToolTip": "MyNotes\\Controllers\\NotesController.cs*",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAkwC0AAABKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-03T18:15:40.972Z"
+              "WhenOpened": "2025-06-03T18:15:40.972Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",

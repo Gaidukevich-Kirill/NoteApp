@@ -13,7 +13,7 @@ namespace MyNotes.Controllers
     public class NotesController : ControllerBase
     {
         private readonly NotesDbContext _context;
-        
+
         public NotesController(NotesDbContext context)
         {
             _context = context;
@@ -39,6 +39,17 @@ namespace MyNotes.Controllers
             {
                 notesQuery = notesQuery
                     .Where(n => n.Title.ToLower().Contains(request.Search.ToLower()));
+            }
+            
+            if (request.StartSortDate != null)
+            {
+                var t = request.StartSortDate.Value.Date.ToUniversalTime();
+                notesQuery = notesQuery.Where(n => (n.CreatedAt >= t));
+            }
+
+            if (request.EndSortDate != null)
+            {
+                notesQuery = notesQuery.Where(n => n.CreatedAt <= request.EndSortDate);
             }
 
             Expression<Func<Note, object>> selectorKey = request.SortItem?.ToLower() switch

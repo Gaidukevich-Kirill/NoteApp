@@ -148,3 +148,4 @@ D:\Projects\NoteApp\backend\MyNotes\MyNotes\obj\Debug\net8.0\refint\MyNotes.dll
 D:\Projects\NoteApp\backend\MyNotes\MyNotes\obj\Debug\net8.0\MyNotes.pdb
 D:\Projects\NoteApp\backend\MyNotes\MyNotes\obj\Debug\net8.0\MyNotes.genruntimeconfig.cache
 D:\Projects\NoteApp\backend\MyNotes\MyNotes\obj\Debug\net8.0\ref\MyNotes.dll
+D:\Projects\NoteApp\backend\MyNotes\MyNotes\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

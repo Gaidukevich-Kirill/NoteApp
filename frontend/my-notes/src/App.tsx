@@ -49,7 +49,6 @@ function App() {
     <section>
       <div>
         <CreateNoteForm onCreate={onCreate} />
-        <CalendarForm />
         <Filters filter={filter} setFilter={setFilter} />
       </div>
 
