@@ -33,7 +33,7 @@ export default function Filters({ filter, setFilter }: any) {
         <input
           className="dateSearch"
           type="date"
-          id="start"
+          id="end"
           min="2000-01-01"
           max="2099-12-31"
           value={endSearchDate}

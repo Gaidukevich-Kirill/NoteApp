@@ -64,11 +64,7 @@ option {
 
 .dateSearch {
     font-family: "Times New Roman";
-    display: center;
-    flex-direction: row;
     max-width: 150px;
-    margin: 20px auto;
-    padding: 20px;
     border: 1px solid #ccc;
     border-radius: 8px;
     background-color: #f9f9f9;
