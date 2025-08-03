@@ -1,10 +1,13 @@
 import * as React from "react";
 import './Note.css';
+import { deleteNoteAsync } from "~services/notes";
 
 interface NoteProps {
+    id: string;
     title: string;
     description: string;
     createdAt: Date;
+    callbackOnDelete: any
 }
 
 function formatDate(date: Date): string {
@@ -18,11 +21,22 @@ function formatDate(date: Date): string {
     return `${day}/${month}/${year} ${hours}:${minutes}:${seconds}`; // Форматируем строку
 }
 
-export default function Note({title, description, createdAt}:NoteProps){
+const handleDeleteAsync = async (id: string, callbackOnDelete: any) => {
+    await deleteNoteAsync(id);
+    await callbackOnDelete();
+};
+
+export default function Note({ id, title, description, createdAt, callbackOnDelete }: NoteProps) {
     return (
         <div className="note">
             <div className="noteHeader">
                 <h3>{title}</h3>
+                <div className="noteDropDownMenu">
+                    <button className="noteDropDownButton">•••</button>
+                    <div className="content">
+                        <button onClick={async () => await handleDeleteAsync(id, callbackOnDelete)}>Удалить</button>
+                    </div>
+                </div>
             </div>
             <div className="divider"></div>
             <div className="noteBody">

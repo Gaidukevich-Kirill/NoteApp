@@ -30,6 +30,22 @@ namespace MyNotes.Controllers
             return Ok();
         }
 
+        [HttpDelete]
+        public async Task<IActionResult> Delete([FromBody] DeleteNoteRequest request, CancellationToken cancellationToken)
+        {
+            var note = await _context.Notes.FirstOrDefaultAsync(n => n.Id == request.Id, cancellationToken);
+            
+            if (note == null)
+            {
+                return NotFound();
+            }
+            
+            _context.Notes.Remove(note);
+            await _context.SaveChangesAsync(cancellationToken);
+
+            return Ok();
+        }
+
         [HttpGet("PaginateNotes")]
         public async Task<IActionResult> GetPaginateNotes([FromQuery] GetPaginateNotesRequest request, CancellationToken ct)
         {
@@ -41,15 +57,16 @@ namespace MyNotes.Controllers
                     .Where(n => n.Title.ToLower().Contains(request.Search.ToLower()));
             }
             
-            if (request.StartSortDate != null)
+            if (request.StartSearchDate != null)
             {
-                var t = request.StartSortDate.Value.Date.ToUniversalTime();
+                var t = request.StartSearchDate.Value.Date.ToUniversalTime();
                 notesQuery = notesQuery.Where(n => (n.CreatedAt >= t));
             }
 
-            if (request.EndSortDate != null)
+            if (request.EndSearchDate != null)
             {
-                notesQuery = notesQuery.Where(n => n.CreatedAt <= request.EndSortDate);
+                var t = request.EndSearchDate.Value.Date.ToUniversalTime();
+                notesQuery = notesQuery.Where(n => (n.CreatedAt <= t));
             }
 
             Expression<Func<Note, object>> selectorKey = request.SortItem?.ToLower() switch

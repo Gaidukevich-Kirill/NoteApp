@@ -6,6 +6,6 @@ namespace MyNotes.Contracts
         string? SortOrder, 
         int PageNumber = 1, 
         int PageSize = 3,
-        DateTime? StartSortDate = null,
-        DateTime? EndSortDate = null);
+        DateTime? StartSearchDate = null,
+        DateTime? EndSearchDate = null);
 }

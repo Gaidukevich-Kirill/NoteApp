@@ -1,20 +1,10 @@
 import * as React from "react";
 import './Filters.css';
-import { useEffect, useState } from "react";
 
 export default function Filters({ filter, setFilter }: any) {
-  const [startSearchDate, setStartSearchDate] = useState();
-  const [endSearchDate, setEndSearchDate] = useState();
-
-  const handleStartDateChange = (event: any) => {
-    setStartSearchDate(event.target.value);
-  };
-
-  const handleEndDateChange = (event: any) => {
-    setEndSearchDate(event.target.value);
-  };
 
 
+console.log(filter.startSearchDate)
   return (
     <div>
       <h1 className="">Фильтры</h1>
@@ -23,21 +13,17 @@ export default function Filters({ filter, setFilter }: any) {
         <input
           className="dateSearch"
           type="date"
-          id="start"
           min="2000-01-01"
           max="2099-12-31"
-          value={startSearchDate}
-          onChange={handleStartDateChange}
+          onChange={(e) => setFilter({ ...filter, startSearchDate: e.target.value }) }
         ></input>
-
+        
         <input
           className="dateSearch"
           type="date"
-          id="end"
           min="2000-01-01"
           max="2099-12-31"
-          value={endSearchDate}
-          onChange={handleEndDateChange}
+          onChange={(e) => setFilter({ ...filter, endSearchDate: e.target.value })}
         ></input>
 
       </div>

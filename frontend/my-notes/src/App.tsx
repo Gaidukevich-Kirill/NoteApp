@@ -6,7 +6,8 @@ import Filters from "./components/Filters";
 import Pagination from "./components/Pagination";
 import { useEffect, useState } from "react";
 import { createNote, fetchNotes, fetchPaginateNotes } from "~services/notes";
-import CalendarForm from "./components/Calendar";
+import { FilterItem } from "./models/filterItem"
+
 
 
 function App() {
@@ -15,20 +16,22 @@ function App() {
   const [currentPage, setCurrentPage] = useState(1);
   const [currentNotes, setCurrentNotes] = useState([]);
   const [elementCount, setElementCount] = useState(0);
+  const [notes, setNotes] = useState([]);
+  
   const fetchData = async () => {
     let result = await fetchPaginateNotes(filter, currentPage);
-    console.log(result);
+    
     setElementCount(result.output.elementCount);
-    setCurrentNotes(result?.output.records);
+    setCurrentNotes(result.output.records);
   }
 
-  //get, post notes + filters
-  const [notes, setNotes] = useState([]);
-  const [filter, setFilter] = useState({
+  const [filter, setFilter] = useState<FilterItem>({
     search: "",
     sortItem: "date",
     sortOrder: "desc",
-    pageSize: notesPerPage
+    pageSize: notesPerPage,
+    startSearchDate: null,
+    endSearchDate: null
   });
 
   const handlePageChange = (page: number) => {
@@ -42,7 +45,7 @@ function App() {
   const onCreate = async (note: any) => {
     await createNote(note);
     let notes = await fetchNotes(filter);
-    setNotes(notes?.data.notes);
+    setNotes(notes?.data);
   }
 
   return (
@@ -57,9 +60,11 @@ function App() {
           {currentNotes.map((item: any, index: number) =>
           (<li key={index}>
             <Note
+              id={item.id}
               title={item.title}
               description={item.description}
               createdAt={item.createdAt}
+              callbackOnDelete={async()=>await fetchData()}
             />
           </li>)
           )}

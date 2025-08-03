@@ -11,7 +11,7 @@ export default function CreateNoteForm({onCreate}:any){
   const [note, setNote] = useState<Note>({});
   
   const onSubmit = (e : any) => {
-    e.preventDefault();
+    //e.preventDefault();
     setNote({});
     onCreate(note);
   };
